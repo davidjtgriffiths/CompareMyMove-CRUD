@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CompanyMatchingSettings index{% endblock %}
+
+{% block body %}
+    <h1>CompanyMatchingSettings index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Postcodes</th>
+                <th>Bedrooms</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for company_matching_setting in company_matching_settings %}
+            <tr>
+                <td>{{ company_matching_setting.id }}</td>
+                <td>{{ company_matching_setting.postcodes }}</td>
+                <td>{{ company_matching_setting.bedrooms }}</td>
+                <td>{{ company_matching_setting.type }}</td>
+                <td>
+                    <a href="{{ path('app_company_matching_settings_show', {'id': company_matching_setting.id}) }}">show</a>
+                    <a href="{{ path('app_company_matching_settings_edit', {'id': company_matching_setting.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_company_matching_settings_new') }}">Create new</a>
+{% endblock %}

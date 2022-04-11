@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CompanyMatchingSettings{% endblock %}
+
+{% block body %}
+    <h1>CompanyMatchingSettings</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ company_matching_setting.id }}</td>
+            </tr>
+            <tr>
+                <th>Postcodes</th>
+                <td>{{ company_matching_setting.postcodes }}</td>
+            </tr>
+            <tr>
+                <th>Bedrooms</th>
+                <td>{{ company_matching_setting.bedrooms }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ company_matching_setting.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_company_matching_settings_index') }}">back to list</a>
+
+    <a href="{{ path('app_company_matching_settings_edit', {'id': company_matching_setting.id}) }}">edit</a>
+
+    {{ include('company_matching_settings/_delete_form.html.twig') }}
+{% endblock %}

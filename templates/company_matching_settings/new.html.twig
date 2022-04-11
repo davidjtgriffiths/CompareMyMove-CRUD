@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CompanyMatchingSettings{% endblock %}
+
+{% block body %}
+    <h1>Create new CompanyMatchingSettings</h1>
+
+    {{ include('company_matching_settings/_form.html.twig') }}
+
+    <a href="{{ path('app_company_matching_settings_index') }}">back to list</a>
+{% endblock %}

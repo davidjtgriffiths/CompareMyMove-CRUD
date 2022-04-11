@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CompanyMatchingSettings{% endblock %}
+
+{% block body %}
+    <h1>Edit CompanyMatchingSettings</h1>
+
+    {{ include('company_matching_settings/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_company_matching_settings_index') }}">back to list</a>
+
+    {{ include('company_matching_settings/_delete_form.html.twig') }}
+{% endblock %}
